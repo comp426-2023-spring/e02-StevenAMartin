@@ -62,6 +62,72 @@ const app = express()
 // Set a port for the server to listen on
 const port = args.port || args.p || process.env.PORT || 8080
 // Load app middleware here to serve routes, accept data requests, etc.
+import { rps, rpsls } from "./lib/rpsls.js"
+
+// READ (HTTP method GET) at root endpoint /app/
+app.get("/app/", (req, res, next) => {
+    res.json({"message":"200 OK"});
+	res.status(200);
+});
+
+// READ (HTTP method GET) at root endpoint /app/rps
+app.get("/app/rps", (req, res, next) => {
+    res.json(rps());
+	res.status(200);
+});
+
+// READ (HTTP method GET) at root endpoint /app/rpsls
+app.get("/app/rpsls", (req, res, next) => {
+    res.json(rpsls());
+	res.status(200);
+});
+
+// READ (HTTP method GET) at root endpoint /app/rps/play
+app.get("/app/rps/play", (req, res, next) => {
+    res.json(rps(req.query.shot));
+	res.status(200);
+});
+
+
+// READ (HTTP method GET) at root endpoint /app/rpsls/play
+app.get("/app/rpsls/play", (req, res, next) => {
+    res.json(rpsls(req.query.shot));
+	res.status(200);
+});
+
+
+// READ (HTTP method POST) at root endpoint /app/rps/play
+app.post("/app/rps/play", (req, res, next) => {
+    res.json(rps(req.body.shot));
+	res.status(200);
+});
+
+
+// READ (HTTP method POST) at root endpoint /app/rpsls/play
+app.post("/app/rpsls/play", (req, res, next) => {
+    res.json(rpsls(req.body.shot));
+	res.status(200);
+});
+
+// READ (HTTP method GET) at /app/rps/play + parameter endpoint
+app.get("/app/rps/play/:shot", (req, res, next) => {
+    res.json(rps(req.params['shot']));
+	res.status(200);
+});
+
+
+// READ (HTTP method GET) at /app/rps/play + parameter endpoint
+app.get("/app/rpsls/play/:shot", (req, res, next) => {
+    res.json(rpsls(req.params.shot));
+	res.status(200);
+});
+
+
+// Default response for any other request
+app.all('/app/*', (req, res, next) => {
+	res.json({"message":"404 NOT FOUND"});
+    res.status(404);
+});
 //
 // Create and update access log
 // The morgan format below is the Apache Foundation combined format but with ISO8601 dates
