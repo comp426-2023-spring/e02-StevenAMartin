@@ -1,12 +1,8 @@
 body {
+    font-family: 'Roboto', sans-serif;
 }
 
-h1 {
-}
-
-p {
-}
-
-.hidden {
-    display: none;
+#gameResult 
+{
+    text-transform:capitalize;
 }

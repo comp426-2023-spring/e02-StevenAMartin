@@ -1,13 +1,5 @@
-// If you would like to see some examples of similar code to make an interface interact with an API, 
-// check out the coin-server example from a previous COMP 426 semester.
-// https://github.com/jdmar3/coinserver
-
 function showHideShots() {
     let check = document.getElementById('opponent');
-    let radiorps = document.getElementsByClassName('rps');
-    let radiorpsls = document.getElementsByClassName('rpsls');
-
-
     if (check.checked == true) {
         $('.shots').show();
         if(document.getElementById('rps').checked == true) {
@@ -17,7 +9,11 @@ function showHideShots() {
         }
     } else {
         $('.shots').hide();
+
     }
+    $('#result').hide();
+    $('#help').hide();
+    $('#rules')[0].innerText = "Show Rules";
 }
 
 function startOver() {
@@ -25,7 +21,18 @@ function startOver() {
     showHideShots();
 }
 
+function help(){
+    $('#help').toggle();
+    console.log($('#rules')[0].innerText);
+    if( $('#rules')[0].innerText == "Show Rules") {
+        $('#rules')[0].innerText = "Hide Rules";
+    } else {
+        $('#rules')[0].innerText = "Show Rules";
+    }
+}
+
 async function playGame () {
+    $('#result').hide();
     let check = document.getElementById('opponent');
     let game = $('input[type=radio][name=game]:checked').val();
     let shot = $('input[type=radio][name=shot]:checked').val();
@@ -37,4 +44,16 @@ async function playGame () {
     let response = await fetch(url);
     let result = await response.json();
     console.log(result);
+
+    document.getElementById('playerImage').src = "./img/" + result.player + ".jpg";
+    if (check.checked == true) {
+        document.getElementById('opponentImage').src = "./img/" + result.opponent + ".jpg";
+        document.getElementById('gameResult').innerHTML = 
+                    "Result: " + result.result + 
+                    "<br> You Played: " + result.player +
+                    "<br> Opponent Played: " + result.opponent ;
+    } else {
+        document.getElementById('gameResult').innerText = "Result: " + result.player;
+    }
+    $('#result').slideDown('fast');
 }

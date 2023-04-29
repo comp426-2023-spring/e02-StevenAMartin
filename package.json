@@ -1,13 +1,14 @@
 {
-  "name": "html-cs-js-demo",
+  "name": "rps or rpsls",
   "version": "1.0.0",
-  "description": "This is the base code for an html+css+js demo non-assignment (extra credit).",
+  "description": "Final assignment",
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "test": "nodemon -e js,css,html server.js --port=8081 --debug",
+    "test": "nodemon -e js,css,html server.js --port=5000 --debug",
+    "dev": "nodemon -e js,css,html server.js --port=8081 --debug",
     "start": "node server.js",
-    "demo": "nodemon -e js,css,html server.js --port=8081 --stat=demo"
+    "demo": "nodemon -e js,css,html server.js --port=5000 --stat=demo"
   },
   "keywords": [
     "node",
@@ -20,7 +21,7 @@
     "express",
     "server"
   ],
-  "author": "@StevenAMartin",
+  "author": "@StevenAMartin, @jdmar3",
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "express": "^4.18.2",

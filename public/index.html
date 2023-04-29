@@ -1,6 +1,11 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="en">
     <head>
-        <title>Rock Paper Scissors</title>
+		<meta charset="UTF-8">
+        <title>Rock Paper Scissors and maybe Lizard Spock</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         <script src="./scripts.js"></script>
@@ -10,13 +15,13 @@
 		<form id="userinput" class="" action="javascript:void(0);">
 			<input type="radio" id="rps" name="game" value="rps" checked="checked" onclick="showHideShots()">
 			<label for="rps">Play rock, paper, scissors?</label>
-			<br/><br/>
+			<br><br>
 			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="showHideShots()">
 			<label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label>
-			<br/><br/>
+			<br><br>
 			<input type="checkbox" id="opponent" name="playtype" value="opponent" onclick="showHideShots()">
 			<label for="opponent">Play against an opponent?</label>
-			<br/><br/>
+			<br><br>
 			<input type="radio" id="rock" name="shot" value="rock" class="rps shots" checked="checked">
 			<label class="shots rps">Rock</label>
 			<input type="radio" id="paper" name="shot" value="paper" class="rps shots">
@@ -27,10 +32,40 @@
 			<label class="shots rpsls">Lizard</label>
 			<input type="radio" id="spock" name="shot" value="spock" class="rpsls shots">
 			<label class="shots rpsls">Spock</label>
-
 		</form>
-		<br/><br/>
+		<span class="shots"><br></span>
         <button type="button" id="play" onclick="playGame()">Play</button>
         <button type="button" id="startover" onclick="startOver()">Start Over</button>
+		<button type="button" id="rules" onclick="help()">Show Rules</button>
+
+
+		<div id="result" class="result">
+			<h2 id="gameResult">Game Result</h2>
+			<img id="playerImage" alt="image of of what the player played" src="./img/rock.jpg" >
+			<img id="opponentImage" class ="shots" alt="image of of what the opponent played" src="./img/rock.jpg" >
+		</div>
+
+		<div id="help">
+			<h2>Rules for Rock Paper Scissors:</h2>
+			<ul>
+				<li>Scissors CUTS Paper</li>
+				<li>Paper COVERS Rock</li>
+				<li>Rock CRUSHES Scissors</li>
+			</ul>
+			
+			<h2>Rules for the Lizard-Spock Expansion of Rock Paper Scissors:</h2>
+			<ul>
+				<li>Scissors CUTS Paper</li>
+				<li>Paper COVERS Rock</li>
+				<li>Rock SMOOSHES Lizard</li>
+				<li>Lizard POISONS Spock</li>
+				<li>Spock SMASHES Scissors</li>
+				<li>Scissors DECAPITATES Lizard</li>
+				<li>Lizard EATS Paper</li>
+				<li>Paper DISPROVES Spock</li>
+				<li>Spock VAPORIZES Rock</li>
+				<li>Rock CRUSHES Scissors</li>
+			</ul>
+		</div>
     </body>
 </html>
