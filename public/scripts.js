@@ -1,6 +1,12 @@
+function pageload() {
+    $('.shots').hide();
+    $('#result').hide();
+    $('#help').hide();
+    $('.rpsls').hide();
+}
+
 function showHideShots() {
-    let check = document.getElementById('opponent');
-    if (check.checked == true) {
+    if (document.getElementById('opponent').checked == true) {
         $('.shots').show();
         if(document.getElementById('rps').checked == true) {
             $('.rpsls').hide();
@@ -9,16 +15,15 @@ function showHideShots() {
         }
     } else {
         $('.shots').hide();
-
     }
     $('#result').hide();
-    $('#help').hide();
-    $('#rules')[0].innerText = "Show Rules";
 }
 
 function startOver() {
     document.getElementById('userinput').reset();
     showHideShots();
+    $('#help').hide();
+    $('#rules')[0].innerText = "Show Rules";
 }
 
 function help(){
