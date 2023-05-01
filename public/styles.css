@@ -6,3 +6,7 @@ body {
 {
     text-transform:capitalize;
 }
+
+#preloadimages {
+    display: none;
+}

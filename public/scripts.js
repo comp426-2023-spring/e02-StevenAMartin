@@ -28,7 +28,6 @@ function startOver() {
 
 function help(){
     $('#help').toggle();
-    console.log($('#rules')[0].innerText);
     if( $('#rules')[0].innerText == "Show Rules") {
         $('#rules')[0].innerText = "Hide Rules";
     } else {
@@ -37,7 +36,6 @@ function help(){
 }
 
 async function playGame () {
-    $('#result').hide();
     let check = document.getElementById('opponent');
     let game = $('input[type=radio][name=game]:checked').val();
     let shot = $('input[type=radio][name=shot]:checked').val();
@@ -60,5 +58,5 @@ async function playGame () {
     } else {
         document.getElementById('gameResult').innerText = "Result: " + result.player;
     }
-    $('#result').slideDown('fast');
+    $('#result').show();
 }
