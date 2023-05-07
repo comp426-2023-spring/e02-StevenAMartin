@@ -13,7 +13,7 @@
     <body onload="pageload()">
 
 		<form id="userinput" class="" action="javascript:void(0);">
-			<input type="radio" id="rps" name="game" value="rps" checked="" onclick="showHideShots()">
+			<input type="radio" id="rps" name="game" value="rps" onclick="showHideShots()">
 			<label for="rps">Play rock, paper, scissors?</label>
 			<br><br>
 			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="showHideShots()">
@@ -22,7 +22,7 @@
 			<input type="checkbox" id="opponent" name="playtype" value="opponent" onclick="showHideShots()">
 			<label for="opponent">Play against an opponent?</label>
 			<br><br>
-			<input type="radio" id="rock" name="shot" value="rock" class="rps shots" checked="">
+			<input type="radio" id="rock" name="shot" value="rock" class="rps shots">
 			<label class="shots rps">Rock</label>
 			<input type="radio" id="paper" name="shot" value="paper" class="rps shots">
 			<label class="shots rps">Paper</label>
@@ -32,17 +32,15 @@
 			<label class="shots rpsls">Lizard</label>
 			<input type="radio" id="spock" name="shot" value="spock" class="rpsls shots">
 			<label class="shots rpsls">Spock</label>
+			<span class="shots"><br></span>
+			<button type="submit" id="play" onclick="playGame()">Play</button>
+			<button type="button" id="startover" onclick="startOver()">Start Over</button>
+			<button type="button" id="rules" onclick="help()">Show Rules</button>
 		</form>
-		<span class="shots"><br></span>
-        <button type="submit" id="play" onclick="playGame()">Play</button>
-        <button type="button" id="startover" onclick="startOver()">Start Over</button>
-		<button type="button" id="rules" onclick="help()">Show Rules</button>
-
-
 		<div id="result" class="result">
 			<h2 id="gameResult">Game Result</h2>
-			<img id="playerImage" alt="image of what the player played" src="./img/rock.jpg" >
-			<img id="opponentImage" class ="shots" alt="image of what the opponent played" src="./img/rock.jpg" >
+			<img id="playerImage" alt="image of what the player played" src="./img/rock.jpg">
+			<img id="opponentImage" class ="shots" alt="image of what the opponent played" src="./img/rock.jpg">
 		</div>
 
 		<div id="help">
