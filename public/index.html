@@ -13,7 +13,7 @@
     <body onload="pageload()">
 
 		<form id="userinput" class="" action="javascript:void(0);">
-			<input type="radio" id="rps" name="game" value="rps" checked="checked" onclick="showHideShots()">
+			<input type="radio" id="rps" name="game" value="rps" checked="" onclick="showHideShots()">
 			<label for="rps">Play rock, paper, scissors?</label>
 			<br><br>
 			<input type="radio" id="rpsls" name="game" value="rpsls" onclick="showHideShots()">
@@ -22,7 +22,7 @@
 			<input type="checkbox" id="opponent" name="playtype" value="opponent" onclick="showHideShots()">
 			<label for="opponent">Play against an opponent?</label>
 			<br><br>
-			<input type="radio" id="rock" name="shot" value="rock" class="rps shots" checked="checked">
+			<input type="radio" id="rock" name="shot" value="rock" class="rps shots" checked="">
 			<label class="shots rps">Rock</label>
 			<input type="radio" id="paper" name="shot" value="paper" class="rps shots">
 			<label class="shots rps">Paper</label>
@@ -34,7 +34,7 @@
 			<label class="shots rpsls">Spock</label>
 		</form>
 		<span class="shots"><br></span>
-        <button type="button" id="play" onclick="playGame()">Play</button>
+        <button type="submit" id="play" onclick="playGame()">Play</button>
         <button type="button" id="startover" onclick="startOver()">Start Over</button>
 		<button type="button" id="rules" onclick="help()">Show Rules</button>
 
@@ -52,7 +52,6 @@
 				<li>Paper COVERS Rock</li>
 				<li>Rock CRUSHES Scissors</li>
 			</ul>
-			
 			<h2>Rules for the Lizard-Spock Expansion of Rock Paper Scissors:</h2>
 			<ul>
 				<li>Scissors CUTS Paper</li>
